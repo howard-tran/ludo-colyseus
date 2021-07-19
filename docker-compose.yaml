@@ -1,0 +1,12 @@
+# this compose file use for dev only
+
+version: "3.5"
+
+services:
+  ludo-colyseus-test:
+    restart: always
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 2567:2567
