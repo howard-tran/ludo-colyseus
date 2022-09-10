@@ -3,7 +3,7 @@ import { Camera } from './Camera';
 import { Dice } from './Dice';
 import { Vec3 } from './Vec3';
 import { Schema, Context, type } from "@colyseus/schema";
-import * as fk from "faker";
+import { faker as fk } from '@faker-js/faker';
 
 // 4 slot on each gameplay
 export class User extends Schema {

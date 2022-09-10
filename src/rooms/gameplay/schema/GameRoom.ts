@@ -116,11 +116,20 @@ export class GameRoom extends Schema {
 
   public getUserReadyState = (id: string) => {
     const user = this.getUserById(id);
+
+    let draft_final = []
+    for (const routes of this.listFinalRoutes) {
+      for (const route of routes.data) {
+        draft_final.push(route)
+      }
+    }
+
     return {
       user,
       camera: this.getCameraPosition(id),
       commonPath: this.listCommonRoutes[user.order - 1],
       finalPath: this.listFinalRoutes[user.order - 1],
+      fullFinal: draft_final,
       pieces: this.listPiece[user.order - 1]
     }
   }

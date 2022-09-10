@@ -8,5 +8,9 @@ services:
     build:
       context: .
       dockerfile: dockerfile
+    volumes:
+      - ./src:/home/app/src:rw
     ports:
       - 2567:2567
+    network_mode: host
+

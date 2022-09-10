@@ -2,7 +2,6 @@ FROM node:14-alpine
 
 RUN mkdir /home/app
 
-COPY src* /home/app/src/
 COPY arena.env /home/app/
 COPY development.env /home/app/
 COPY package-lock.json /home/app/
