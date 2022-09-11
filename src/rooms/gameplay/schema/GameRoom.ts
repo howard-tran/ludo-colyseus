@@ -241,10 +241,12 @@ export class GameRoom extends Schema {
     this.listCommonRoutes = [];
     this.listPiece = [];
     this.listFinalRoutes = [];
-    this.cameras.push(new Camera(new Vec3(15, 12, 15)));
-    this.cameras.push(new Camera(new Vec3(15, 12, -15)));
-    this.cameras.push(new Camera(new Vec3(-15, 12, -15)));
-    this.cameras.push(new Camera(new Vec3(-15, 12, 15)));
+
+    const [camx, camy, camz] = [20.0, 14.0, -0.1];
+    this.cameras.push(new Camera(new Vec3(camx, camy, camz)));
+    this.cameras.push(new Camera(new Vec3(camz, camy, -camx)));
+    this.cameras.push(new Camera(new Vec3(-camx, camy, -camz)));
+    this.cameras.push(new Camera(new Vec3(-camz, camy, camx)));
 
     this.dices.push(new Dice(
       new Vec3(-2, 10, 0),
