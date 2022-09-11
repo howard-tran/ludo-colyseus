@@ -179,10 +179,15 @@ export class GameRoom extends Schema {
   //   }
   // }
 
-  public getDice = (userId) => {
+  public getDice = (userId, dice1, dice2) => {
+    let vals = [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1];
+    if (dice1 != -1 && dice2 != -1) {
+      vals = [dice1, dice2]
+    }
+
     return {
       userId,
-      diceVals: [Math.floor(Math.random() * 6) + 1, Math.floor(Math.random() * 6) + 1],
+      diceVals: vals,
       dice: {
         rotation: {
           x: Math.random()*Math.PI*2,

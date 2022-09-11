@@ -50,7 +50,7 @@ export class LudoGameplay extends Room<GameRoom> {
       this.broadcast(StartTurn, this.state.getUserTurnState());
     });
     this.onMessage(ThrowDice, (client, message) => {
-      this.broadcast(ThrowDice, this.state.getDice(message.userId))
+      this.broadcast(ThrowDice, this.state.getDice(message.userId, message.dice1, message.dice2))
     });
     // this.onMessage(RollDicePoint, (client, message) => {
     //   this.broadcast(RollDicePoint, this.state.updateDicePoint(message.dice1, message.dice2));
